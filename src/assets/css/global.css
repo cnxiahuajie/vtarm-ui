@@ -1,4 +1,33 @@
 
+/*弹性盒子*/
 .box {
     display: flex;
+}
+
+/*边框*/
+.border {
+    border: 1px solid #1ebad6;
+    box-shadow: 0 0 4px #1ebad6;
+}
+
+/*指针样式*/
+/*手*/
+.mouse {
+    cursor: pointer;
+}
+/*移动*/
+.move {
+    cursor: move;
+}
+/*指向东*/
+.e-resize {
+    cursor: e-resize;
+}
+/*指向东南*/
+.se-resize {
+    cursor: se-resize;
+}
+/*指向南*/
+.s-resize {
+    cursor: s-resize;
 }

@@ -1,6 +1,6 @@
 <template>
-    <div id="dock-container" class="box">
-        <div class="box item mouse application" v-for="application in applications" :key="application.id">
+    <div id="dock-container" class="box border">
+        <div class="box item mouse application" v-for="application in applications" :key="application.id" @click="handleOpenApplication(application)">
             {{application.name}}
         </div>
         <div v-show="dividingVisible" id="dividing-line" class="dividing-line"></div>
@@ -40,6 +40,10 @@
             }
         },
         methods: {
+            // 打开应用程序
+            handleOpenApplication(application) {
+                this.$emit('handleOpenApplication', application);
+            },
             // 添加一个后台应用程序
             handleAddBackgroundApplication(application) {
                 this.backgroundApplication.push(application);
@@ -51,7 +55,17 @@
                     this.dividingVisible = true;
                 }
             },
-            // 获取窗体
+            // 获取应用程序
+            getApplication(id) {
+                let application;
+                this.applications.forEach(item => {
+                    if (id === item.id) {
+                        application = item;
+                    }
+                });
+                return application;
+            },
+            // 移除窗体
             removeBackgroundApplication(id) {
                 let that = this;
                 this.backgroundApplication.forEach((item, i) => {
@@ -84,7 +98,6 @@
 
         background-color: rgba(59, 58, 74, 0.5);
         border-width: 1px 1px 0px 1px;
-        border-color: rgba(30, 186, 214, 0.5);
         border-style: solid;
     }
 
