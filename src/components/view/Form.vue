@@ -69,18 +69,10 @@
             },
             // 鼠标移动到窗体内容区
             handleBodyMouseMove(ev) {
-                let eresize = 'e-resize';
                 let seresize = 'se-resize';
-                let sresize = 's-resize';
                 let ele = document.getElementById(this.formProperties.id);
-                if (ele.classList.contains(eresize)) {
-                    ele.classList.remove(eresize)
-                }
                 if (ele.classList.contains(seresize)) {
                     ele.classList.remove(seresize)
-                }
-                if (ele.classList.contains(sresize)) {
-                    ele.classList.remove(sresize)
                 }
                 // 东
                 let e = (RESIZE_PRECISION > Math.abs(ev.clientX - (parseInt(this.formProperties.style.left.replace('px', '')) + parseInt(this.formProperties.style.width.replace('px', '')))));
@@ -91,12 +83,6 @@
 
                 if (se) {
                     ele.classList.add(seresize);
-                    this.resizeReady = true;
-                } else if (e) {
-                    ele.classList.add(eresize);
-                    this.resizeReady = true;
-                } else if (s) {
-                    ele.classList.add(sresize);
                     this.resizeReady = true;
                 } else {
                     this.resizeReady = false;
@@ -161,7 +147,6 @@
     .head {
         height: 30px;
         justify-content: space-between;
-        font-size: 12px;
         box-shadow: 0 0 2px #1ebad6;
         flex-shrink: 0;
     }

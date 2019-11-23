@@ -52,7 +52,7 @@
                     let rightX = (parseInt(this.activeForm.style.left.replace('px', '')) + parseInt(this.activeForm.style.width.replace('px', '')));
                     console.log(rightX)
                     let newWidth = (parseInt(this.activeForm.style.width.replace('px', '')) + e.clientX - rightX);
-                    this.activeForm.style.width = newWidth+ 'px';
+                    this.activeForm.style.width = newWidth + 'px';
                 }
             },
             // 删除窗体

@@ -107,10 +107,9 @@
         width: calc(50px - 4px);
         height: calc(50px - 2px);
         margin: 10px;
-        font-size: 8px;
         background-color: #161626;
-        border: 1px solid #1ebad6;
-
+        border: 1px solid;
+        text-align-last: justify;
         color: #1ebad6;
 
         transition: background-color 500ms;
