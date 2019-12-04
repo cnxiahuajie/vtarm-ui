@@ -3,14 +3,23 @@
         <div class="top"></div>
         <div class="bottom"></div>
         <div id="root-menu">
-            <div class="item mouse">
-                图书馆
+            <div class="item mouse library">
+                <div class="title">
+                    <span>图书馆</span>
+                </div>
+                <img :src="libraryImageUrl">
             </div>
-            <div class="item mouse">
-                组件库
+            <div class="item mouse component">
+                <div class="title">
+                    <span>组件库</span>
+                </div>
+                <img :src="componentImageUrl">
             </div>
-            <div class="item mouse">
-                工具箱
+            <div class="item mouse toolkit">
+                <div class="title">
+                    <span>工具箱</span>
+                </div>
+                <img :src="toolkitImageUrl">
             </div>
         </div>
     </div>
@@ -21,7 +30,11 @@
     export default {
         name: "Home",
         data() {
-            return {}
+            return {
+                libraryImageUrl: require("@/" + 'assets/images/home/library.png'),
+                componentImageUrl: require("@/" + 'assets/images/home/component.png'),
+                toolkitImageUrl: require("@/" + 'assets/images/home/tools.png')
+            }
         },
         methods: {}
     }
@@ -60,15 +73,29 @@
         background-color: rgba(99, 112, 126, 0.8);
         color: #637074;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         margin: 0 10px;
         color: rgba(242, 246, 245, 1.0);
         border: 1px solid rgba(99, 112, 126, 0.6);
+        position: relative;
     }
 
     #root-menu .item:hover {
-        color: #ffffff;
+        background-color: rgba(99, 112, 126, 0.6);
+    }
+
+    .library .title, .component .title, .toolkit .title {
+        position: absolute;
+        top: 0px;
+        height: 50px;
+        width: 100%;
+        background-color: rgba(99, 112, 126, 1);
+        color: rgba(242, 246, 245, 1.0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
 </style>
