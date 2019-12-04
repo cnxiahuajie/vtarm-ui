@@ -15,7 +15,7 @@
         display: flex;
         width: calc(100vw);
         height: calc(100vh);
-        background-color: #161626;
+        background-color: #F2F6F5;
         font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     }
 </style>
