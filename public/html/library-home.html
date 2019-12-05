@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>图书馆</title>
+
+	<style>
+	body {
+        margin: 0;
+        overflow: hidden;
+        font-size: 12px;
+    }
+	#home-container {
+        width: calc(100vw);
+		height: calc(100vh);
+        display: flex;
+        z-index: 1;
+    }
+
+    #home-container .left{
+        background-color: #93B5B3;
+        width: 30%;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		min-width: 230px;
+    }
+    #home-container .right{
+		display: flex;
+        width: 70%;
+		background-color: #C8DAD3;
+    }
+
+	#home-container .right .tip-box {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #ffffff;
+		text-shadow: 0 0 2px #93B5B3;
+	}
+
+	#home-container .left .search-box{
+		display: flex;
+		height: 5%;
+		padding: 5px 10px;
+	}
+
+	#home-container .left .status-box{
+		display: flex;
+		width: calc(100% - 20px);
+		height: 60px;
+		position: absolute;
+		bottom: 0;
+		background-color: rgba(99, 112, 126, 0.6);
+		align-items: center;
+		color: #C8DAD3;
+		padding: 0 10px;
+		font-size: 14px;
+		overflow: hidden;
+	}
+
+	#home-container .left .status-box .item{
+		color: rgba(200, 218, 211, 1);
+		margin: 0 10px;
+	}
+
+	#home-container .left .status-box .item:hover{
+		color: rgba(200, 218, 211, 0.5);
+	}
+
+	#home-container .left .search-item-box{
+		display: flex;
+		flex-direction: column;
+		height: 95%;
+		padding: 5px 20px;
+		color: #FFFFFF;
+	}
+
+	#home-container .left .search-item-box .search-item {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#home-container .left .search-item-box .search-item h1{
+		font-size: 18px;
+		margin: 10px;
+	}
+
+	#home-container .left .search-item-box .search-item h1:hover{
+		text-shadow: 0 0 2px #FFFFFF;
+	}
+
+	#home-container .left .search-item-box .search-item h2{
+		font-size: 16px;
+		margin: 5px;
+		height: 20px;
+	}
+
+	#home-container .left .search-item-box .search-item h2:hover{
+		text-shadow: 0 0 5px #FFFFFF;
+	}
+
+	#home-container .left .search-item-box .search-item .child-search-item {
+		transition: height 600ms;
+		display: flex;
+		height: 0px;
+		flex-direction: column;
+		overflow: hidden;
+	}
+
+	#home-container .left .search-item-box .search-item:hover .child-search-item {
+		height: 150px;
+	}
+
+	.search-input {
+        width: calc(100%);
+        outline: none;
+        height: calc(100%);
+        border: 0;
+        color: #ffffff;
+		border-bottom: 2px solid rgba(200, 218, 211, 1);
+        background-color: rgba(0, 0, 0, 0);
+        text-indent: 10px;
+    }
+
+	::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		color: #F2F6F5;
+	}
+
+	.mouse {
+		cursor: pointer;
+	}
+
+	</style>
+</head>
+<body>
+<div id="home-container">
+        <div class="left">
+			<div class="search-box">
+				<input type="text" class="search-input" placeholder="搜索">
+			</div>
+			<div class="search-item-box">
+				<div class="search-item mouse">
+					<h1>UI/UE</h1>
+				</div>
+				<div class="search-item mouse">
+					<h1>测试</h1>
+				</div>
+				<div class="search-item mouse">
+					<h1>前端</h1>
+				</div>
+				<div class="search-item mouse">
+					<h1>后端</h1>
+					<div class="child-search-item">
+						<h2>Springboot2</h2>
+						<h2>Vtarm框架之基础</h2>
+						<h2>Vtarm框架之初级应用</h2>
+						<h2>Vtarm框架之中级应用</h2>
+						<h2>Vtarm框架之高级应用</h2>
+					</div>
+				</div>
+				<div class="search-item mouse">
+					<h1>运维</h1>
+				</div>
+				<div class="search-item mouse">
+					<h1>服务器</h1>
+				</div>
+				<div class="search-item mouse">
+					<h1>数据库</h1>
+				</div>
+			</div>
+			<div class="status-box">
+				<span class="item mouse">反馈</span>
+				<span class="item mouse">设置</span>
+				<span class="item mouse">登录</span>
+				<span class="item mouse">用户中心</span>
+			</div>
+		</div>
+        <div class="right">
+			<div class="tip-box"><h1>理论上来说，理论和实际是一样的。但实际上来说，他们则不是</h1></div>
+		</div>
+    </div>
+</body>
+</html>

@@ -1,26 +1,51 @@
 <template>
     <div id="home-container">
-        <div class="top"></div>
-        <div class="bottom"></div>
-        <div id="root-menu">
-            <div class="item mouse library">
-                <div class="title">
-                    <span>图书馆</span>
-                </div>
-                <img :src="libraryImageUrl">
+        <div class="left">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="搜索">
             </div>
-            <div class="item mouse component">
-                <div class="title">
-                    <span>组件库</span>
+            <div class="search-item-box">
+                <div class="search-item mouse">
+                    <h1>产品设计</h1>
                 </div>
-                <img :src="componentImageUrl">
-            </div>
-            <div class="item mouse toolkit">
-                <div class="title">
-                    <span>工具箱</span>
+                <div class="search-item mouse">
+                    <h1>美工交互设计</h1>
                 </div>
-                <img :src="toolkitImageUrl">
+                <div class="search-item mouse">
+                    <h1>产品测试</h1>
+                </div>
+                <div class="search-item mouse">
+                    <h1>前端开发</h1>
+                </div>
+                <div class="search-item mouse">
+                    <h1>后端开发</h1>
+                    <div class="child-search-item">
+                        <h2>Springboot2</h2>
+                        <h2>Vtarm框架之基础</h2>
+                        <h2>Vtarm框架之初级应用</h2>
+                        <h2>Vtarm框架之中级应用</h2>
+                        <h2>Vtarm框架之高级应用</h2>
+                    </div>
+                </div>
+                <div class="search-item mouse">
+                    <h1>运维部署</h1>
+                </div>
+                <div class="search-item mouse">
+                    <h1>服务器</h1>
+                </div>
+                <div class="search-item mouse">
+                    <h1>数据库管理</h1>
+                </div>
             </div>
+            <div class="status-box">
+                <span class="item mouse">反馈</span>
+                <span class="item mouse">设置</span>
+                <span class="item mouse">登录</span>
+                <span class="item mouse">用户中心</span>
+            </div>
+        </div>
+        <div class="right">
+            <div class="tip-box"><h1>理论上来说，理论和实际是一样的。但实际上来说，他们则不是</h1></div>
         </div>
     </div>
 </template>
@@ -43,59 +68,126 @@
 <style scoped>
     #home-container {
         width: calc(100vw);
+        height: calc(100vh);
         display: flex;
-        flex-direction: column;
         z-index: 1;
     }
 
-    #home-container .top{
-        background-color: #C8DAD3;
-        height: 50%;
-    }
-    #home-container .bottom{
-        height: 50%;
+    #home-container .left{
         background-color: #93B5B3;
-    }
-
-    #root-menu {
-        position: absolute;
-        z-index: 2;
-        display: flex;
-        width: calc(100vw);
-        height: calc(100vh);
-        justify-content: center;
-        align-items: center;
-    }
-
-    #root-menu .item {
-        height: 30%;
-        width: 10%;
-        background-color: rgba(99, 112, 126, 0.8);
-        color: #637074;
+        width: 30%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0 10px;
-        color: rgba(242, 246, 245, 1.0);
-        border: 1px solid rgba(99, 112, 126, 0.6);
         position: relative;
+        min-width: 230px;
+    }
+    #home-container .right{
+        display: flex;
+        width: 70%;
+        background-color: #C8DAD3;
     }
 
-    #root-menu .item:hover {
-        background-color: rgba(99, 112, 126, 0.6);
-    }
-
-    .library .title, .component .title, .toolkit .title {
-        position: absolute;
-        top: 0px;
-        height: 50px;
+    #home-container .right .tip-box {
         width: 100%;
-        background-color: rgba(99, 112, 126, 1);
-        color: rgba(242, 246, 245, 1.0);
+        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        color: #ffffff;
+        text-shadow: 0 0 2px #93B5B3;
+    }
+
+    #home-container .left .search-box{
+        display: flex;
+        height: 5%;
+        padding: 5px 10px;
+    }
+
+    #home-container .left .status-box{
+        display: flex;
+        width: calc(100% - 20px);
+        height: 60px;
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(99, 112, 126, 0.6);
+        align-items: center;
+        color: #C8DAD3;
+        padding: 0 10px;
+        font-size: 14px;
+        overflow: hidden;
+    }
+
+    #home-container .left .status-box .item{
+        color: rgba(200, 218, 211, 1);
+        margin: 0 10px;
+    }
+
+    #home-container .left .status-box .item:hover{
+        color: rgba(200, 218, 211, 0.5);
+    }
+
+    #home-container .left .search-item-box{
+        display: flex;
+        flex-direction: column;
+        height: 95%;
+        padding: 5px 20px;
+        color: #FFFFFF;
+    }
+
+    #home-container .left .search-item-box .search-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #home-container .left .search-item-box .search-item h1{
+        font-size: 18px;
+        margin: 10px;
+    }
+
+    #home-container .left .search-item-box .search-item h1:hover{
+        text-shadow: 0 0 2px #FFFFFF;
+    }
+
+    #home-container .left .search-item-box .search-item h2{
+        font-size: 16px;
+        margin: 5px;
+        height: 20px;
+    }
+
+    #home-container .left .search-item-box .search-item h2:hover{
+        text-shadow: 0 0 5px #FFFFFF;
+    }
+
+    #home-container .left .search-item-box .search-item .child-search-item {
+        transition: height 600ms;
+        display: flex;
+        height: 0px;
+        flex-direction: column;
+        overflow: hidden;
+        padding: 0 20px;
+    }
+
+    #home-container .left .search-item-box .search-item:hover .child-search-item {
+        height: 150px;
+    }
+
+    .search-input {
+        width: calc(100%);
+        outline: none;
+        height: calc(100%);
+        border: 0;
+        color: #ffffff;
+        border-bottom: 2px solid rgba(200, 218, 211, 1);
+        background-color: rgba(0, 0, 0, 0);
+        text-indent: 10px;
+    }
+
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #F2F6F5;
+    }
+
+    .mouse {
+        cursor: pointer;
     }
 
 </style>
