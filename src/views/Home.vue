@@ -1,52 +1,6 @@
 <template>
     <div id="home-container">
-        <div class="left">
-            <div class="search-box">
-                <input type="text" class="search-input" placeholder="搜索">
-            </div>
-            <div class="search-item-box">
-                <div class="search-item mouse">
-                    <h1>产品设计</h1>
-                </div>
-                <div class="search-item mouse">
-                    <h1>美工交互设计</h1>
-                </div>
-                <div class="search-item mouse">
-                    <h1>产品测试</h1>
-                </div>
-                <div class="search-item mouse">
-                    <h1>前端开发</h1>
-                </div>
-                <div class="search-item mouse">
-                    <h1>后端开发</h1>
-                    <div class="child-search-item">
-                        <h2>Springboot2</h2>
-                        <h2>Vtarm框架之基础</h2>
-                        <h2>Vtarm框架之初级应用</h2>
-                        <h2>Vtarm框架之中级应用</h2>
-                        <h2>Vtarm框架之高级应用</h2>
-                    </div>
-                </div>
-                <div class="search-item mouse">
-                    <h1>运维部署</h1>
-                </div>
-                <div class="search-item mouse">
-                    <h1>服务器</h1>
-                </div>
-                <div class="search-item mouse">
-                    <h1>数据库管理</h1>
-                </div>
-            </div>
-            <div class="status-box">
-                <span class="item mouse">反馈</span>
-                <span class="item mouse">设置</span>
-                <span class="item mouse">登录</span>
-                <span class="item mouse">用户中心</span>
-            </div>
-        </div>
-        <div class="right">
-            <div class="tip-box"><h1>理论上来说，理论和实际是一样的。但实际上来说，他们则不是</h1></div>
-        </div>
+        <div class="tip-box"><h1>理论上来说，理论和实际是一样的。但实际上来说，他们则不是</h1></div>
     </div>
 </template>
 
@@ -79,7 +33,6 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        min-width: 230px;
     }
     #home-container .right{
         display: flex;
@@ -126,6 +79,10 @@
         color: rgba(200, 218, 211, 0.5);
     }
 
+    #home-container .left .status-box .hide-left {
+        margin-left: auto;
+    }
+
     #home-container .left .search-item-box{
         display: flex;
         flex-direction: column;
@@ -152,6 +109,7 @@
         font-size: 16px;
         margin: 5px;
         height: 20px;
+
     }
 
     #home-container .left .search-item-box .search-item h2:hover{
@@ -188,6 +146,20 @@
 
     .mouse {
         cursor: pointer;
+    }
+
+    .height-transition {
+        transition: text-shadow 200ms;
+        -moz-transition: text-shadow 200ms;	/* Firefox 4 */
+        -webkit-transition: text-shadow 200ms;	/* Safari 和 Chrome */
+        -o-transition: text-shadow 200ms;	/* Opera */
+    }
+
+    .color-transition {
+        transition: color 200ms;
+        -moz-transition: color 200ms;	/* Firefox 4 */
+        -webkit-transition: color 200ms;	/* Safari 和 Chrome */
+        -o-transition: color 200ms;	/* Opera */
     }
 
 </style>
