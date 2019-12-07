@@ -2,7 +2,7 @@
     <div id="app">
         <div class="left">
             <div class="search-box">
-                <input type="text" class="search-input" placeholder="搜索">
+                <input type="text" class="search-input background-color-transition color-transition" placeholder="搜索">
             </div>
             <div class="search-item-box">
                 <div class="search-item mouse">
@@ -20,11 +20,11 @@
                 <div class="search-item mouse">
                     <h1 class="height-transition">后端开发</h1>
                     <div class="child-search-item">
-                        <h2 class="height-transition">Springboot2</h2>
-                        <h2 class="height-transition">Vtarm框架之基础</h2>
-                        <h2 class="height-transition">Vtarm框架之初级应用</h2>
-                        <h2 class="height-transition">Vtarm框架之中级应用</h2>
-                        <h2 class="height-transition">Vtarm框架之高级应用</h2>
+                        <h3 class="height-transition" @click="toSearchResult('Springboot2')">Springboot2</h3>
+                        <h3 class="height-transition" @click="toSearchResult('Vtarm框架之基础')">Vtarm框架之基础</h3>
+                        <h3 class="height-transition" @click="toSearchResult('Vtarm框架之初级应用')">Vtarm框架之初级应用</h3>
+                        <h3 class="height-transition" @click="toSearchResult('Vtarm框架之中级应用')">Vtarm框架之中级应用</h3>
+                        <h3 class="height-transition" @click="toSearchResult('Vtarm框架之高级应用')">Vtarm框架之高级应用</h3>
                     </div>
                 </div>
                 <div class="search-item mouse">
@@ -38,10 +38,10 @@
                 </div>
             </div>
             <div class="status-box">
-                <span class="item mouse color-transition" @click="handleAbout">关于我</span>
-                <span class="item mouse color-transition">设置</span>
-                <span class="item mouse color-transition">登录</span>
-                <span class="item mouse color-transition">用户中心</span>
+                <span class="item mouse color-transition" @click="toAbout">关于</span>
+                <span class="item mouse color-transition" @click="toAbout">贡献榜</span>
+                <span class="item mouse color-transition" @click="toSignIn">登录</span>
+                <span class="item mouse color-transition" @click="toUserCenter">用户中心</span>
                 <span class="item mouse color-transition hide-left">&lt;&lt;</span>
             </div>
         </div>
@@ -56,8 +56,20 @@
     export default {
         name: "App",
         methods: {
-            handleAbout() {
-                this.$router.push({path:'/About'});
+            toAbout() {
+                this.$router.push({name:'About'});
+            },
+            toUserCenter() {
+                this.$router.push({name:'UserCenter'});
+            },
+            toSettings() {
+                this.$router.push({name:'Settings'});
+            },
+            toSignIn() {
+                window.location.href = process.env.VUE_APP_SECURITY_SIGN_IN_URL
+            },
+            toSearchResult(keyword) {
+                this.$router.push({name:'ArticleSearchResult', query: {keyword: keyword}});
             }
         }
     }
@@ -75,6 +87,7 @@
         width: calc(100vw);
         height: calc(100vh);
         font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+        color: #606266;
         display: flex;
         z-index: 1;
     }
@@ -90,6 +103,8 @@
         display: flex;
         width: 70%;
         background-color: #C8DAD3;
+        padding: 10px;
+        overflow-y: scroll;
     }
 
     #app .right .tip-box {
@@ -105,7 +120,8 @@
     #app .left .search-box{
         display: flex;
         height: 5%;
-        padding: 5px 10px;
+        padding: 10px;
+        border-bottom: 2px solid rgba(200, 218, 211, 1);
     }
 
     #app .left .status-box{
@@ -140,7 +156,6 @@
         flex-direction: column;
         height: 95%;
         padding: 5px 20px;
-        color: #FFFFFF;
     }
 
     #app .left .search-item-box .search-item {
@@ -149,23 +164,17 @@
     }
 
     #app .left .search-item-box .search-item h1{
-        font-size: 18px;
-        margin: 10px;
-    }
-
-    #app .left .search-item-box .search-item h1:hover{
-        text-shadow: 0 0 2px #FFFFFF;
-    }
-
-    #app .left .search-item-box .search-item h2{
         font-size: 16px;
+        margin: 10px;
+        color: #F2F6F5;
+    }
+
+    #app .left .search-item-box .search-item h3{
+        font-size: 14px;
         margin: 5px;
         height: 20px;
+        color: #F2F6F5;
 
-    }
-
-    #app .left .search-item-box .search-item h2:hover{
-        text-shadow: 0 0 5px #FFFFFF;
     }
 
     #app .left .search-item-box .search-item .child-search-item {
@@ -185,32 +194,27 @@
         width: calc(100%);
         outline: none;
         height: calc(100%);
-        border: 0;
-        color: #ffffff;
-        border-bottom: 2px solid rgba(200, 218, 211, 1);
         background-color: rgba(0, 0, 0, 0);
+        border: 0;
         text-indent: 10px;
+        font-size: 14px;
     }
 
-    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    .search-input:focus {
+        background-color: #FFFFFF;
+        color: rgba(99, 112, 126, 1);
+    }
+
+    input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
         color: #F2F6F5;
+    }
+
+    input:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: rgba(99, 112, 126, 1);
     }
 
     .mouse {
         cursor: pointer;
     }
 
-    .height-transition {
-        transition: text-shadow 200ms;
-        -moz-transition: text-shadow 200ms;	/* Firefox 4 */
-        -webkit-transition: text-shadow 200ms;	/* Safari 和 Chrome */
-        -o-transition: text-shadow 200ms;	/* Opera */
-    }
-
-    .color-transition {
-        transition: color 200ms;
-        -moz-transition: color 200ms;	/* Firefox 4 */
-        -webkit-transition: color 200ms;	/* Safari 和 Chrome */
-        -o-transition: color 200ms;	/* Opera */
-    }
 </style>

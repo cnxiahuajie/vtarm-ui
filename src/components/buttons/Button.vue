@@ -1,16 +1,12 @@
 <template>
-    <div class="button" v-text="text" :style="style"></div>
+    <div class="button mouse" v-text="text"></div>
 </template>
 
 <script>
     export default {
         name: "Button",
         props: {
-            style: Object,
-            width: String,
-            height: String,
             text: String,
-            type: String,
             click: Function
         }
     }
@@ -22,8 +18,9 @@
         justify-content: center;
         align-items: center;
         width: 100px;
-        height: 35px;
-        color: #F2F6F5;
+        height: 30px;
+        color: #FFFFFF;
+        text-shadow: 0 0 1px rgba(96, 169, 166, 1);
         background-color: rgba(96, 169, 166, 0.5);
         border: 2px solid rgba(96, 169, 166, 1);
     }

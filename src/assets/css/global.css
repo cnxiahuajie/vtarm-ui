@@ -6,3 +6,31 @@
 .mouse {
     cursor: pointer;
 }
+
+.height-transition {
+    transition: text-shadow 200ms;
+    -moz-transition: text-shadow 200ms;	/* Firefox 4 */
+    -webkit-transition: text-shadow 200ms;	/* Safari 和 Chrome */
+    -o-transition: text-shadow 200ms;	/* Opera */
+}
+
+.color-transition {
+    transition: color 200ms;
+    -moz-transition: color 200ms;	/* Firefox 4 */
+    -webkit-transition: color 200ms;	/* Safari 和 Chrome */
+    -o-transition: color 200ms;	/* Opera */
+}
+
+.background-color-transition {
+    transition: background-color 200ms;
+    -moz-transition: background-color 200ms;	/* Firefox 4 */
+    -webkit-transition: background-color 200ms;	/* Safari 和 Chrome */
+    -o-transition: background-color 200ms;	/* Opera */
+}
+
+.width-transition {
+    transition: width 200ms;
+    -moz-transition: width 200ms;	/* Firefox 4 */
+    -webkit-transition: width 200ms;	/* Safari 和 Chrome */
+    -o-transition: width 200ms;	/* Opera */
+}
