@@ -6,6 +6,7 @@ import UserCenter from "@/views/UserCenter.vue";
 import ArticleSearchResult from "@/views/ArticleSearchResult";
 import ArticleView from "@/views/ArticleView";
 import ArticleEdit from "@/views/ArticleEdit";
+import ArticleCenter from "@/views/ArticleCenter";
 
 Vue.use(VueRouter);
 
@@ -39,6 +40,11 @@ const routes = [
     path: "/ArticleEdit",
     name: "ArticleEdit",
     component: ArticleEdit
+  },
+  {
+    path: "/ArticleCenter",
+    name: "ArticleCenter",
+    component: ArticleCenter
   }
 ];
 

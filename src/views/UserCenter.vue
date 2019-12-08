@@ -67,19 +67,19 @@
         <div class="properties-group subscribe">
             <h2 class="title">我的订阅</h2>
             <div class="item">
-                <p class="info">夏华杰 发布了《一条咸鱼的梦想1》</p>
+                <p class="info"><span class="who">夏华杰</span><span class="do">发布了</span>《<span class="what">一条咸鱼的梦想1</span>》</p>
             </div>
             <div class="item">
-                <p class="info">夏华杰 发布了《一条咸鱼的梦想2》</p>
+                <p class="info"><span class="who">夏华杰</span><span class="do">发布了</span>《<span class="what">一条咸鱼的梦想1</span>》</p>
             </div>
             <div class="item">
-                <p class="info">夏华杰 发布了《一条咸鱼的梦想3》</p>
+                <p class="info"><span class="who">夏华杰</span><span class="do">发布了</span>《<span class="what">一条咸鱼的梦想1</span>》</p>
             </div>
             <div class="item">
-                <p class="info">夏华杰 发布了《一条咸鱼的梦想4》</p>
+                <p class="info"><span class="who">夏华杰</span><span class="do">发布了</span>《<span class="what">一条咸鱼的梦想1</span>》</p>
             </div>
             <div class="item">
-                <p class="info">夏华杰 发布了《一条咸鱼的梦想5》</p>
+                <p class="info"><span class="who">夏华杰</span><span class="do">发布了</span>《<span class="what">一条咸鱼的梦想1</span>》</p>
             </div>
         </div>
     </div>

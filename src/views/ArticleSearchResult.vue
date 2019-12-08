@@ -41,8 +41,11 @@
         max-height: 100%;
         overflow-y: scroll;
     }
+
     #article-search-result .article {
         display: flex;
-        border-bottom: 1px solid #F2F6F5;
+        border-bottom: 1px solid #E4E7ED;
+        padding: 10px 0;
     }
+
 </style>

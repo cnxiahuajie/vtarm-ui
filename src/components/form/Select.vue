@@ -30,6 +30,7 @@
         width: 220px;
         height: 32px;
         z-index: 3;
+        border: 1px solid #E4E7ED;
     }
 
     .option {
@@ -51,7 +52,8 @@
     }
 
     .option:hover {
-        background: #c8dad3;
+        background: #93b5b3;
+        color: #F2F6F5;
     }
 
     .select:focus .option {
@@ -63,6 +65,7 @@
         opacity: 0;
         position: absolute;
         left: -99999px;
+        outline: none;
     }
 
     input:checked + label {

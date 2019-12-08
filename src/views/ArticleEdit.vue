@@ -1,15 +1,18 @@
 <template>
     <div id="article-edit-container">
+        <div class="button-container">
+            <Button class="button mouse" :text="'保存'"/>
+            <Button class="button mouse" :text="'定时发布'"/>
+            <Button class="button mouse" :text="'立即发布'"/>
+        </div>
         <Input class="item" :placeholder="'请输入标题'"/>
         <div class="item article-type-column">
             <Select class="article-type"/>
             <Input class="article-column" :placeholder="'请输入专栏'"/>
         </div>
         <TinymceEditor class="item" ref="editor" v-model="article.content" :disabled="disabled" />
-        <div class="button-container">
-            <Button class="button mouse" :text="'保存'"/>
-            <Button class="button mouse" :text="'定时发布'"/>
-            <Button class="button mouse" :text="'立即发布'"/>
+        <div class="item article-type-column">
+            <Input class="article-link" :placeholder="'链接'"/>
         </div>
     </div>
 </template>
@@ -58,7 +61,6 @@
         padding: 10px;
         background-color: #FFFFFF;
         display: flex;
-
     }
 
     .button-container .button:not(:first-child) {

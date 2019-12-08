@@ -5,6 +5,7 @@
         </h1>
         <p class="author-info">
             <span class="item author-name">夏华杰</span>
+            <span class="item subscribe mouse">订阅</span>
             <span class="item">发表于</span>
             <span class="item">2019-12-7 13:05:22</span>
             <span class="item">阅读 <span>2019</span></span>
@@ -43,5 +44,9 @@
 
     .author-info .author-name {
         font-weight: bold;
+    }
+
+    .subscribe {
+        color: #409EFF;
     }
 </style>

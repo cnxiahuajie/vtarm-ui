@@ -24,7 +24,7 @@
         width: calc(100%);
         outline: none;
         height: calc(30px);
-        border: 0;
+        border: 1px solid #E4E7ED;
         color: #000000;
         background-color: #FFFFFF;
         text-indent: 10px;

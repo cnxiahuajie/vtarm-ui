@@ -39,14 +39,16 @@
             </div>
             <div class="status-box">
                 <span class="item mouse color-transition" @click="toAbout">关于</span>
-                <span class="item mouse color-transition" @click="toAbout">贡献榜</span>
                 <span class="item mouse color-transition" @click="toSignIn">登录</span>
                 <span class="item mouse color-transition" @click="toUserCenter">用户中心</span>
+                <span class="item mouse color-transition" @click="toArticleCenter">我的文章</span>
                 <span class="item mouse color-transition hide-left">&lt;&lt;</span>
             </div>
         </div>
         <div class="right">
-            <router-view/>
+            <transition name="fade" mode="out-in">
+                <router-view/>
+            </transition>
         </div>
     </div>
 </template>
@@ -62,14 +64,14 @@
             toUserCenter() {
                 this.$router.push({name:'UserCenter'});
             },
-            toSettings() {
-                this.$router.push({name:'Settings'});
-            },
             toSignIn() {
                 window.location.href = process.env.VUE_APP_SECURITY_SIGN_IN_URL
             },
             toSearchResult(keyword) {
                 this.$router.push({name:'ArticleSearchResult', query: {keyword: keyword}});
+            },
+            toArticleCenter() {
+                this.$router.push({name:'ArticleCenter'});
             }
         }
     }
@@ -102,7 +104,7 @@
     #app .right{
         display: flex;
         width: 70%;
-        background-color: #C8DAD3;
+        background-color: #F2F6F5;
         padding: 10px;
         overflow-y: scroll;
     }
@@ -113,8 +115,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #ffffff;
-        text-shadow: 0 0 2px #93B5B3;
     }
 
     #app .left .search-box{

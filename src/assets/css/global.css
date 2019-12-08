@@ -34,3 +34,19 @@
     -webkit-transition: width 200ms;	/* Safari 和 Chrome */
     -o-transition: width 200ms;	/* Opera */
 }
+
+
+.tag-point {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.frontend {
+    background-color: #0080ff;
+}
+
+.backend {
+    background-color: #cc8500;
+}
